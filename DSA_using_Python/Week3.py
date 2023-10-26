@@ -35,36 +35,3 @@ def transpose(m):
 #print(transpose([[3]]))
             
             
-
-
-            
-###################
-
-import ast
-
-def parse(inp):
-  inp = ast.literal_eval(inp)
-  return (inp)
-
-fncall = input()
-lparen = fncall.find("(")
-rparen = fncall.rfind(")")
-fname = fncall[:lparen]
-farg = fncall[lparen+1:rparen]
-
-if fname == "expanding":
-  arg = parse(farg)
-  print(expanding(arg))
-
-if fname == "sumsquare":
-  arg = parse(farg)
-  print(sumsquare(arg))
-
-if fname == "transpose":
-  arg = parse(farg)
-  savearg = arg
-  ans = transpose(arg)
-  if savearg == arg:
-    print(ans)
-  else:
-    print("Side effect")
