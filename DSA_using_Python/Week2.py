@@ -51,33 +51,3 @@ def shuffle(l1,l2):
             newlist.append(l2[i])
     return(newlist)
 
-###
-
-import ast
-
-def tolist(inp):
-  inp = "["+inp+"]"
-  inp = ast.literal_eval(inp)
-  return (inp[0],inp[1])
-
-def parse(inp):
-  inp = ast.literal_eval(inp)
-  return (inp)
-
-fncall = input()
-lparen = fncall.find("(")
-rparen = fncall.rfind(")")
-fname = fncall[:lparen]
-farg = fncall[lparen+1:rparen]
-
-if fname == "primeproduct":
-   arg = parse(farg)
-   print(primeproduct(arg))
-elif fname == "delchar":
-   (s1,s2) = parse(farg)
-   print(delchar(s1,s2))
-elif fname == "shuffle":
-   (l1,l2) = parse(farg)
-   print(shuffle(l1,l2))
-else:
-   print("Function", fname, "unknown")
